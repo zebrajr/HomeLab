@@ -13,3 +13,4 @@ Scripts used for starting my HomeLab stuff, either from scratch or moving betwee
 
 ### ToDo
 - Change sync-from-opportunity.sh to use .env file
+- Add Ansible deployment basics
