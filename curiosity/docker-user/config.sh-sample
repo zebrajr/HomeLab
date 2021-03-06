@@ -1,0 +1,2 @@
+export BACKTO="Source of BackUp eg: /mnt/raid1/backups"
+export BACKFROM="Destination of BackUp eg: /mnt/raid1/opportunity-clone"

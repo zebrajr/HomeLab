@@ -13,3 +13,4 @@ Scripts used for starting my HomeLab stuff, either from scratch or moving betwee
 
 ### ToDo
 - Add Ansible deployment basics
+- Change to single config.sh
