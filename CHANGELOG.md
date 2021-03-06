@@ -11,7 +11,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - sync-from-opportunity.sh - Syncs [local] from [remote]
 
 ### Updated
-
+- sync-from-opportunity.sh - Now uses config.sh
 
 ### Deleted
 
