@@ -15,3 +15,4 @@ Scripts used for starting my HomeLab stuff, either from scratch or moving betwee
 - Add Ansible deployment basics
 - Change to single config.sh
 - Add limit to backup files
+- Automatic Backup from used Images
