@@ -12,6 +12,7 @@ Scripts used for starting my HomeLab stuff, either from scratch or moving betwee
 ### Note
 
 ### ToDo
+- Configure .env-fireflyiii
 - Add Ansible deployment basics
 - Change to single config.sh
 - Add limit to backup files
