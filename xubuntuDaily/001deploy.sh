@@ -5,6 +5,7 @@ source secrets.cfg
 echo "::  Adding Atom to thrusted sources"
 wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
+sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
 
 echo "::  Updating and Upgrading"
 sudo apt update -y &> /dev/null
@@ -18,6 +19,9 @@ sudo apt install atom -y &> /dev/null
 sudo apt install keepass2 -y &> /dev/null
 sudo apt install notepadqq -y &> /dev/null
 sudo apt install remmina -y &> /dev/null
+
+echo "::  Installing Cryptomator"
+sudo apt install cryptomator -y &> /dev/null
 
 echo "::  Installing: htops, kvm and it's utilities..."
 sudo apt install htop -y &> /dev/null
