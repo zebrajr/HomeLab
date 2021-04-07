@@ -13,10 +13,11 @@ sudo apt upgrade -y &> /dev/null
 echo "::  Installing common dependencies"
 sudo apt install software-properties-common apt-transport-https wget -y &> /dev/null
 
-echo "::  Installing Atom, Keepass2, Notepadqq"
+echo "::  Installing Atom, Keepass2, Notepadqq, Remmina"
 sudo apt install atom -y &> /dev/null
 sudo apt install keepass2 -y &> /dev/null
-sudo apt install notepadqq -y  &> /dev/null
+sudo apt install notepadqq -y &> /dev/null
+sudo apt install remmina -y &> /dev/null
 
 echo "::  Installing: htops, kvm and it's utilities..."
 sudo apt install htop -y &> /dev/null
