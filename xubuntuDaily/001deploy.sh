@@ -2,10 +2,11 @@ clear
 start=`date +%s`
 source secrets.cfg
 
-echo "::  Adding Atom to thrusted sources"
+echo "::  Adding Atom, Cryptomator, Opera to thrusted sources"
 wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
 sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
+wget -qO- https://deb.opera.com/archive.key | sudo apt-key add –
 
 echo "::  Updating and Upgrading"
 sudo apt update -y &> /dev/null
@@ -20,8 +21,9 @@ sudo apt install keepass2 -y &> /dev/null
 sudo apt install notepadqq -y &> /dev/null
 sudo apt install remmina -y &> /dev/null
 
-echo "::  Installing Cryptomator"
+echo "::  Installing Cryptomator, Opera Browser"
 sudo apt install cryptomator -y &> /dev/null
+sudo apt install opera-stable -y &> /dev/null
 
 echo "::  Installing: htops, kvm and it's utilities..."
 sudo apt install htop -y &> /dev/null
