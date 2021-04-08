@@ -6,7 +6,8 @@ echo "::  Adding Atom, Cryptomator, Opera to thrusted sources"
 wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
 sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
-wget -qO- https://deb.opera.com/archive.key | sudo apt-key add –
+wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
+sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
 
 echo "::  Updating and Upgrading"
 sudo apt update -y &> /dev/null
