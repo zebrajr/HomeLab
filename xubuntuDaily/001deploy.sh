@@ -1,4 +1,5 @@
 clear
+
 start=`date +%s`
 source secrets.cfg
 

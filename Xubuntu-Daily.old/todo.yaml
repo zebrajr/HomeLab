@@ -1,7 +1,0 @@
-- Download & Install Atom / Opera Automatically
-- Add User and Set Password automatically
-- Add Summary from Setup at Start
-- Set Delay before continuing after summary
-- Add .gitignore:
-    secrets.cfg
-    client.opvn
