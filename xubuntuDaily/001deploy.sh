@@ -17,11 +17,15 @@ sudo apt upgrade -y &> /dev/null
 echo "::  Installing common dependencies"
 sudo apt install software-properties-common apt-transport-https wget -y &> /dev/null
 
+
 echo "::  Installing Atom, Keepass2, Notepadqq, Remmina"
 sudo apt install atom -y &> /dev/null
 sudo apt install keepass2 -y &> /dev/null
 sudo apt install notepadqq -y &> /dev/null
 sudo apt install remmina -y &> /dev/null
+
+echo "::  Installing keepass2 utilities"
+sudo apt install xdotool -y &> /dev/null
 
 echo "::  Installing Cryptomator, Opera Browser"
 sudo apt install cryptomator -y &> /dev/null
