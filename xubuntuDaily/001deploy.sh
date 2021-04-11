@@ -27,6 +27,10 @@ echo "::  Installing Cryptomator, Opera Browser"
 sudo apt install cryptomator -y &> /dev/null
 sudo apt install opera-stable -y &> /dev/null
 
+echo "::  Installing docker, docker-compose"
+sudo apt install docker -y &> /dev/null
+sudo apt install docker-compose -y &> /dev/null
+
 echo "::  Installing: htops, kvm and it's utilities..."
 sudo apt install htop -y &> /dev/null
 sudo apt install qemu-kvm -y &> /dev/null
