@@ -44,10 +44,13 @@ sudo apt install libvirt-daemon-system -y &> /dev/null
 sudo apt install libvirt-clients -y &> /dev/null
 sudo apt install bridge-utils -y &> /dev/null
 
-echo "Adding user < ${USER} > to VM groups and docker"
+echo "::  Adding user < ${USER} > to VM groups and docker"
 sudo adduser ${USER} libvirt
 sudo adduser ${USER} kvm
 sudo gpasswd -a ${USER} docker
+
+echo "::  Installing MS Fonts"
+sudo apt install ttf-mscorefonts-installer
 
 echo "::  Removing Bloatware"
 sudo apt remove gnome-mines -y &> /dev/null
