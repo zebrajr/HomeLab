@@ -55,6 +55,7 @@ sudo apt remove transmission-gtk -y &> /dev/null
 sudo apt remove parole -y &> /dev/null
 sudo apt remove WebBrowser -y &> /dev/null
 sudo apt remove pidgin -y &> /dev/null
+sudo apt remove thunderbird -y &> /dev/null
 
 echo "::  Cleaning Up"
 sudo apt auto-remove -y &> /dev/null
