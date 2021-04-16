@@ -10,6 +10,8 @@ sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
 wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
 sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
 
+
+clear
 echo "::  Updating and Upgrading"
 sudo apt update -y &> /dev/null
 sudo apt upgrade -y &> /dev/null
@@ -27,22 +29,27 @@ sudo apt install remmina -y &> /dev/null
 echo "::  Installing keepass2 utilities"
 sudo apt install xdotool -y &> /dev/null
 
-echo "::  Installing Cryptomator, Opera Browser"
+echo "::  Installing Cryptomator, Opera Browser, gparted"
 sudo apt install cryptomator -y &> /dev/null
 sudo apt install opera-stable -y &> /dev/null
+sudo apt install gparted -y &> /dev/null
 
 echo "::  Installing docker, docker-compose and Ansible"
 sudo apt install docker -y &> /dev/null
 sudo apt install docker-compose -y &> /dev/null
 sudo apt install ansible -y &> /dev/null
 
-echo "::  Installing: htops, kvm and it's utilities"
+echo "::  Installing htops, kvm and it's utilities"
 sudo apt install htop -y &> /dev/null
 sudo apt install qemu-kvm -y &> /dev/null
 sudo apt install virt-manager -y &> /dev/null
 sudo apt install libvirt-daemon-system -y &> /dev/null
 sudo apt install libvirt-clients -y &> /dev/null
 sudo apt install bridge-utils -y &> /dev/null
+
+echo "::  Installing gnome-control-center"
+sudo apt install gnome-control-center gnome-online-accounts
+
 
 echo "::  Adding user < ${USER} > to VM groups and docker"
 sudo adduser ${USER} libvirt
