@@ -47,8 +47,8 @@ sudo apt install libvirt-daemon-system -y &> /dev/null
 sudo apt install libvirt-clients -y &> /dev/null
 sudo apt install bridge-utils -y &> /dev/null
 
-echo "::  Installing gnome-control-center"
-sudo apt install gnome-control-center gnome-online-accounts
+#echo "::  Installing gnome-control-center"
+#sudo apt install gnome-control-center gnome-online-accounts
 
 
 echo "::  Adding user < ${USER} > to VM groups and docker"
