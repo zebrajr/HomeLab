@@ -69,7 +69,9 @@ sudo apt remove pidgin -y &> /dev/null
 sudo apt remove thunderbird -y &> /dev/null
 
 echo "::  Cleaning Up"
+sudo apt autoclean -y &> /dev/null
 sudo apt auto-remove -y &> /dev/null
+
 
 end=`date +%s`
 runtime=$((end-start))
