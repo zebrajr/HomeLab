@@ -6,7 +6,7 @@ sudo apt update -y &> /dev/null
 sudo apt upgrade -y &> /dev/null
 
 
-echo "::  Installing Steam"
+echo "::  Installing Steam, Audacious"
 sudo apt install steam -y &> /dev/null
 sudo apt install audacious -y &> /dev/null
 
