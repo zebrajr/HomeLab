@@ -1,9 +1,9 @@
 echo "::  Updating"
 start=`date +%s`
-sudo apt update -y &> /dev/null &&
+sudo apt update -y &> /dev/null
 echo "::  Upgrading the following:"
 sudo apt list --upgradable
-sudo apt upgrade -y
+sudo apt upgrade -y &> /dev/null
 echo "::  Removing Old Packages"
 sudo apt autoclean -y
 sudo apt autoremove -y
