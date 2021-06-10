@@ -6,10 +6,13 @@ sudo apt update -y &> /dev/null
 sudo apt upgrade -y &> /dev/null
 
 
-echo "::  Installing Steam, Audacious, VLC"
+echo "::  Installing: Steam, Audacious, VLC"
 sudo apt install steam -y &> /dev/null
 sudo apt install audacious -y &> /dev/null
 sudo apt install vlc -y &> /dev/null
+
+echo "::  Installing: Handbrake"
+sudo apt install handbrake -y &> /dev/null
 
 echo "::  Cleaning Up"
 sudo apt autoclean -y &> /dev/null
