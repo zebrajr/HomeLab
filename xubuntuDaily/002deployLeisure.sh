@@ -11,8 +11,9 @@ sudo apt install steam -y &> /dev/null
 sudo apt install audacious -y &> /dev/null
 sudo apt install vlc -y &> /dev/null
 
-echo "::  Installing: Handbrake"
+echo "::  Installing: Handbrake, mkvtoolnix (with GUI)"
 sudo apt install handbrake -y &> /dev/null
+sudo apt install mkvtoolnix mkvtoolnix-gui -y &> /dev/null
 
 echo "::  Cleaning Up"
 sudo apt autoclean -y &> /dev/null
