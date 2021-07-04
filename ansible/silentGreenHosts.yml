@@ -1,5 +1,9 @@
 all:
   hosts:
+<<<<<<< HEAD
      192.168.217.100:
+=======
+     {192.168.217.100}:
+>>>>>>> 6e5ad1a21773d7c0740c4dfebf3610ee9d294077
        ansible_user: ${PIUSER}
        ansible_password: ${PIPASSWORD}
