@@ -1,7 +1,0 @@
----
-
-- name: Get SilentGreen Pi to Working State
-  hosts: all
-  tasks:
-    - name: Ping Pi
-      action: ping

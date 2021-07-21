@@ -5,15 +5,11 @@ Playbooks and ansible configs to deploy different systems
 
 
 ### Task
-- Make a copy of .env-sample
-```
-cp .env-sample .env
-```
 - Edit with your own values
 - Change the IPs under <fileName>Hosts.yml
 - Run the playbook
 ```
-ansible-playbook -i <fileName>Hosts.yml <fileName>Playbook.yml
+ansible-playbook -i hosts deploy.yml
 ```
 
 ### Result
