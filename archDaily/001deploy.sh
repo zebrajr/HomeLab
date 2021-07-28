@@ -4,6 +4,7 @@ clear
 loadkeys de-latin1
 
 # Change Timezone to Berlin
+# #[TODO] Should be asked from user
 timedatectl set-timezone Europe/Berlin
 timedatectl set-ntp true
 
@@ -43,3 +44,9 @@ hwclock --systohc
 
 # Generate Locales
 locale-gen
+
+# Create locale.conf and set LANG Variable
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+# Set Keyboard Layout
+echo "KEYMAP=de-latin1" > /etc/vconsole.conf
