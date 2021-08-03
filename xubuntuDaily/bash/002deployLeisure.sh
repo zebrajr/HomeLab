@@ -15,6 +15,10 @@ echo "::  Installing: Handbrake, ffmpeg"
 sudo apt install handbrake -y &> /dev/null
 sudo apt install ffmpeg -y &> /dev/null
 
+echo "::  Installing: xscreensaver-gl"
+sudo apt install xscreensaver-gl -y &> /dev/null
+
+
 echo "::  Cleaning Up"
 sudo apt autoclean -y &> /dev/null
 sudo apt auto-remove -y &> /dev/null
