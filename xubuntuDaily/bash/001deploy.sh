@@ -50,9 +50,10 @@ sudo apt install bridge-utils -y &> /dev/null
 #echo "::  Installing gnome-control-center"
 #sudo apt install gnome-control-center gnome-online-accounts
 
-echo "::  Installing rclone, rclone-browser"
+echo "::  Installing rclone, rclone-browser, tmux"
 sudo apt install rclone -y &> /dev/null
 sudo apt install rclone-browser -y &> /dev/null
+sudo apt install tmux -y &> /dev/null
 
 
 echo "::  Adding user < ${USER} > to VM groups and docker"
