@@ -28,7 +28,7 @@ do
   for counter in {1..3}
   do
     displayMessage $worktime "Work Work Work!"
-    displayMessage $shortime "Chilling Quickly"
+    displayMessage $shorttime "Chilling Quickly"
   done
   displayMessage $longtime "Resting..."
 done
