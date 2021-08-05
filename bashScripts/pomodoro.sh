@@ -9,17 +9,27 @@ shorttime=300
 longtime=1200
 
 
+displayMessage(){
+  notify-send -i "${PWD}/rsc/pomodoro.png" "Pomodoro Timer" "$2"
+  secs=$1
+  while [[ 0 -ne $secs ]]
+  do
+    echo $2
+    echo "$secs Seconds to go"
+    sleep 1
+    secs=$[secs-1]
+    clear
+  done
+}
 
+clear
 while true
 do
   for counter in {1..3}
   do
-    notify-send -i "${PWD}/rsc/pomodoro.png" "Pomodoro Timer" "Work Work Work!"
-    sleep ${worktime}
-    notify-send -i "${PWD}/rsc/pomodoro.png" "Pomodoro Timer" "You earned a small break."
-    sleep ${shorttime}
+    displayMessage $worktime "Work Work Work!"
+    displayMessage $shortime "Chilling Quickly"
   done
-  notify-send -i "${PWD}/rsc/pomodoro.png" "Pomodoro Timer" "Okay, time to rest a bit longer."
-  sleep ${longtime}
+  displayMessage $longtime "Resting..."
 done
 exit 0
