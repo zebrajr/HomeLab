@@ -1,0 +1,18 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax"
+    ]
+  editor:
+    defaultFontSize: 12
+    fontSize: 12
+    softWrap: true
+  "exception-reporting":
+    userId: "785f026c-99a7-4c08-92ba-406bb123eab5"
+  github: {}
+  minimap: {}
+  welcome:
+    showOnStartup: false
