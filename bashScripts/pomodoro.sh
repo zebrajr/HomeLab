@@ -28,7 +28,10 @@ do
   for counter in {1..3}
   do
     displayMessage $worktime "Work Work Work!"
-    displayMessage $shorttime "Chilling Quickly"
+    if [[ $counter -ne 3 ]];
+    then
+      displayMessage $shorttime "Chilling Quickly"
+    fi
   done
   displayMessage $longtime "Resting..."
 done
