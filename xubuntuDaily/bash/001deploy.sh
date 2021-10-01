@@ -22,7 +22,7 @@ sudo apt install software-properties-common apt-transport-https wget -y &> /dev/
 
 echo "::  Installing Atom, Keepass2, Notepadqq, Remmina"
 sudo apt install atom -y &> /dev/null
-sudo apt install keepass2 -y &> /dev/null
+sudo apt install keepassxc -y &> /dev/null
 sudo apt install notepadqq -y &> /dev/null
 sudo apt install remmina -y &> /dev/null
 
