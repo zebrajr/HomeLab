@@ -17,12 +17,15 @@ echo ":: Enter disk to be used "
 echo ":: Eg: /dev/vda"
 read disk
 
-echo "Enter hostname "
+echo "New Hostname? "
 echo "Eg: bsa200arch"
 read newhostname
-echo "Enter domain "
+echo "Local Domain?"
 echo "Eg: local"
 read newdomain
+echo "Main User?"
+echo "Eg: csa"
+read newuserid
 
 #echo "set a password for root "
 #passwd

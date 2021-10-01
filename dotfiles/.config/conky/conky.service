@@ -1,0 +1,8 @@
+[Unit]
+Description=Conky Setup
+
+[Service]
+ExecStart=/home/csa/.config/conky/conky.sh
+
+[Install]
+WantedBy=multi-user.target
