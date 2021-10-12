@@ -70,10 +70,11 @@ sudo apt remove sgt-launcher -y &> /dev/null
 sudo apt remove transmission-gtk -y &> /dev/null
 sudo apt remove parole -y &> /dev/null
 sudo apt remove WebBrowser -y &> /dev/null
-sudo apt remove pidgin -y &> /dev/null
+sudo apt remove pidgin* -y &> /dev/null
 sudo apt remove thunderbird -y &> /dev/null
 sudo apt remove hexchat -y &> /dev/null
 sudo apt remove xfce4-notes -y &> /dev/null
+sudo apt remove imagemagick* -y &> /dev/null
 
 echo "::  Cleaning Up"
 sudo apt autoclean -y &> /dev/null
