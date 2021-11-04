@@ -14,11 +14,16 @@ displayMessage(){
   secs=$1
   while [[ 0 -ne $secs ]]
   do
+    read -t1 -n1 check
+    clear
+    if [[ $check == "p" ]];then
+        echo "!! Paused !!"
+        read -n1
+        check=""
+    fi
     echo $2
     echo "$secs Seconds to go"
-    sleep 1
     secs=$[secs-1]
-    clear
   done
 }
 
