@@ -1,5 +1,5 @@
 #!/bin/bash
-find /mnt/hdd/DL/DL/Clips/ ! -type d > /mnt/hdd/DL/DL/Scripts/files.txt
+find /mnt/hdd/DL/DL/Clips/ ! -type d | sort -k 5 > /mnt/hdd/DL/DL/Scripts/files.txt
 sed -i -e "s/mnt/file '\/mnt/gi" /mnt/hdd/DL/DL/Scripts/files.txt
 sed -i -e "s/\/file/file/gi" /mnt/hdd/DL/DL/Scripts/files.txt
 sed -i -e "s/.mkv/.mkv'/gi" /mnt/hdd/DL/DL/Scripts/files.txt
