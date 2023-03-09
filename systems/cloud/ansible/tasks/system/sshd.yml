@@ -1,0 +1,25 @@
+- name: sshd_config > set PasswordAuthentication = no
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regex: ^(# *)?PasswordAuthentication
+    line: PasswordAuthentication no
+    backrefs: yes
+
+- name: sshd_config > set PermitRootLogin = no
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regex: ^(# *)?PermitRootLogin
+    line: PermitRootLogin no
+    backrefs: yes
+
+- name: sshd_config > remove PermitRootLogin yes
+  lineinfile:
+    path: "/etc/ssh/sshd_config"
+    line: "PermitRootLogin yes"
+    state: absent
+
+- name: sshd_config > remove PasswordAuthentication yes
+  lineinfile:
+    path: "/etc/ssh/sshd_config"
+    line: "PasswordAuthentication yes"
+    state: absent

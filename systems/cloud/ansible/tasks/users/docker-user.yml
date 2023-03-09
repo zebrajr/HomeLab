@@ -1,0 +1,14 @@
+- name: docker-user is present
+  user:
+    name: docker-user
+    state: present
+    groups: sudo, docker
+    shell: /bin/bash
+
+- name: copy ssh public key
+  authorized_key:
+    user: docker-user
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - ../../files/contabo-vps-m-me@carlossousa.tech.pub

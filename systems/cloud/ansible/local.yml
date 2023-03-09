@@ -1,0 +1,15 @@
+- hosts: localhost
+  connection: local
+  become: true
+
+
+  tasks:
+    - name: Import Software Tasks
+      include_tasks: tasks/software/package-utilities.yml
+
+    - name: Import Users Tasks
+      include_tasks: tasks/users/docker-user.yml
+
+    - name: Import Systems Tasks
+      include_tasks: tasks/system/sshd.yml
+      include_tasks: tasks/system/services.yml
