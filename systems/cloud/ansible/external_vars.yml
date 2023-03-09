@@ -1,3 +1,7 @@
+# Apt Cache Time
+# Default: 43200 (12 hours)
+apt_cache_valid_time: 43200
+
 # Timezone
 server_timezone: Europe/Berlin
 

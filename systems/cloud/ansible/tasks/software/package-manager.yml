@@ -1,0 +1,8 @@
+- name: system setup | package manager | update, upgrade and clean
+  apt:
+    name: "*"
+    state: latest
+    update_cache: yes
+    cache_valid_time: "{{ apt_cache_valid_time }}"
+    autoclean: yes
+    autoremove: yes
