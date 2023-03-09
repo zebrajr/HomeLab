@@ -2,6 +2,8 @@
   connection: local
   become: true
 
+  vars_files:
+    - external_vars.yml
 
   tasks:
     - name: Import Software Tasks
@@ -15,6 +17,8 @@
       loop:
         - tasks/system/sshd.yml
         - tasks/system/fail2ban.yml
+        - tasks/system/locale.yml
+        - tasks/system/clock.yml
 
     - name: Import Service Tasks
       include_tasks: tasks/system/services.yml

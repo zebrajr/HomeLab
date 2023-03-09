@@ -1,0 +1,9 @@
+# Timezone
+server_timezone: Europe/Berlin
+
+# Locale
+server_locale: en_US.UTF-8
+server_locale_language: en_US
+server_locale_time: de_DE.UTF-8
+server_locale_numeric: de_DE.UTF-8
+server_locale_monetary: de_DE.UTF-8

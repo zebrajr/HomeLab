@@ -1,0 +1,25 @@
+- name: system setup | locale | add local
+  tags: locale,system,setup
+  locale_gen:
+    name: "{{ server_locale }}"
+    state: present
+
+- name: system setup | locale | set lang
+  tags: locale,system,setup
+  command: "localectl set-locale LANG={{ server_locale }}"
+
+- name: system setup | locale | set language
+  tags: locale,system,setup
+  command: "localectl set-locale LANGUAGE={{ server_locale_language }}"
+
+- name: system setup | locale | set time
+  tags: locale,system,setup
+  command: "localectl set-locale LC_TIME={{ server_locale_time }}"
+
+- name: system setup | locale | set numeric
+  tags: locale,system,setup
+  command: "localectl set-locale LC_NUMERIC={{ server_locale_numeric }}"
+
+- name: system setup | locale | set monetary
+  tags: locale,system,setup
+  command: "localectl set-locale LC_MONETARY={{ server_locale_monetary }}"
