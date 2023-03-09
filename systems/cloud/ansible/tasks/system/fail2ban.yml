@@ -1,0 +1,7 @@
+- name: fail2ban > copy jail.local to jail.d
+  copy:
+    src: ../../files/jail.local
+    dest: /etc/fail2ban/jail.d/jail.local
+    owner: root
+    group: root
+    mode: '0644'

@@ -11,5 +11,11 @@
       include_tasks: tasks/users/docker-user.yml
 
     - name: Import Systems Tasks
-      include_tasks: tasks/system/sshd.yml
+      include_tasks: "{{ item }}"
+      loop:
+        - tasks/system/sshd.yml
+        - tasks/system/fail2ban.yml
+
+    - name: Import Service Tasks
       include_tasks: tasks/system/services.yml
+      
