@@ -1,12 +1,11 @@
+- name: Set fail2ban to enabled and restart
+  service:
+    name: fail2ban
+    enabled: true
+    state: restarted
+
 - name: Restart sshd serviece
   service:
     name: sshd
+    enabled: true
     state: restarted
-
-
-- name: Restart fail2ban service
-  service:
-    name: fail2ban
-    state: restarted
-
-
