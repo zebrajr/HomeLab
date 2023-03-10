@@ -22,6 +22,7 @@
         - tasks/system/fail2ban.yml
         - tasks/system/locale.yml
         - tasks/system/clock.yml
+        - tasks/system/directories.yml
 
     - name: Import Service Tasks
       include_tasks: tasks/system/services.yml
