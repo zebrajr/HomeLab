@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  dashboard:
+    image: phntxx/dashboard:latest
+    restart: unless-stopped
+    #user: 1000:1000
+    environment:
+      #  - CLOUDFLARE_ZONE_ID=[OPTIONAL CLOUDFLARE V4 ZONE ID]
+      #  - CLOUDFLARE_PURGE_TOKEN=[OPTIONAL CLOUDFLARE PURGE TOKEN]
+      - VIRTUAL_HOST=${DASHBOARD_HOSTNAME}
+      - VIRTUAL_PORT=${DASHBOARD_PORT}
+    expose:
+      - 8080
+    networks:
+      - reverse_proxy_network
+    volumes:
+      - ${DASHBOARD_STORAGE}:/app/data
+    # ports:
+    #   - 8080:8080
+
+
+networks:
+  reverse_proxy_network:
+    name: reverse_proxy_network
+    external: true
