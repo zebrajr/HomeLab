@@ -11,7 +11,7 @@
                 },
                 {
                     "name": "Wiki",
-                    "displayURL": "example.com",
+                    "displayURL": "wiki.carlossousa.tec",
                     "url": "https://wiki.carlossousa.tech",
                     "icon": "tips_and_updates"
                 }
@@ -42,20 +42,10 @@
             "name": "Useful Links",
             "items": [
                 {
-                    "name": "GitHub",
-                    "displayURL": "github.com/zebrajr/",
-                    "url": "https://github.com/zebrajr/",
-                    "icon": "code"
-                },
-                {
-                    "name": "Steam",
-                    "url": "https://steamcommunity.com/id/csousa90/",
-                    "icon": "sports_esports"
-                },
-                {
-                    "name": "LastFm",
-                    "url": "https://www.last.fm/user/zebrajr",
-                    "icon": "graphic_eq"
+                    "name": "Torn Player Indexer",
+                    "displayURL": "torn.carlossousa.tech",
+                    "url": "https://torn.carlossousa.tech",
+                    "icon": "list"
                 }
             ]
         }
