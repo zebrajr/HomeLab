@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  dokuwiki:
+    image: 'mprasil/dokuwiki:stable'
+    container_name: ${APP_NAME}
+    restart: ${RESTART_POLICY}
+    networks:
+      - reverse_proxy_network
+    expose:
+      - 80
+    volumes:
+      - ${DOKUWIKI_DATA}:/dokuwiki/data
+      - ${DOKUWIKI_CONF}:/dokuwiki/conf
+      - ${DOKUWIKI_LIB_PLUGINS}:/dokuwiki/lib/plugins
+      - ${DOKUWIKI_LIB_TPL}:/dokuwiki/lib/tpl
+      - ${DOKUWIKI_LOGS}:/var/log
+
+networks:
+  reverse_proxy_network:
+    name: reverse_proxy_network
+    external: true
