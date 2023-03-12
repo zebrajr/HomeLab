@@ -1,0 +1,45 @@
+version: '3.1'
+
+services:
+  wordpress:
+    container_name: ${HOMEPAGE_APP_NAME}
+    image: wordpress:latest
+    restart: unless-stopped
+    #ports:
+    # - 80:80
+    expose:
+      - 80
+    working_dir: /var/www/html
+    environment:
+      WORDPRESS_DB_HOST: ${HOMEPAGE_DB_NAME}
+      WORDPRESS_DB_USER: ${HOMEPAGE_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${HOMEPAGE_DB_PWD}
+      WORDPRESS_DB_NAME: ${HOMEPAGE_DB_NAME}
+    volumes:
+      - ${WORDPRESS_STORAGE}:/var/www/html
+    networks:
+      - reverse_proxy_network
+      - wordpress_network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: ${HOMEPAGE_APP_DB_NAME}
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${HOMEPAGE_DB_NAME}
+      MYSQL_USER: ${HOMEPAGE_DB_USER}
+      MYSQL_PASSWORD: ${HOMEPAGE_DB_PWD}
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ${DB_STORAGE}:/var/lib/mysql
+    networks:
+      - wordpress_network
+
+networks:
+  reverse_proxy_network:
+    name: reverse_proxy_network
+    external: true
+  wordpress_network:
+    name: wordpress_homepage_network
