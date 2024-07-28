@@ -1,0 +1,38 @@
+---
+- name: Install desired software packages
+  apt:
+    name: "{{ software_packages_present }}"
+    state: present
+  when: software_packages is defined
+  tags: common, software
+
+
+- name: Ensure flatpak is installed
+  package:
+    name: flatpak
+    state: present
+  when: flatpak_packages_present is defined
+  tags: common, software
+
+- name: Add Flatpak remote
+  flatpak_remote:
+    name: "{{ item.remote }}"
+    state: present
+  loop: "{{ flatpak_packages_present }}"
+  when: item.remote is defined
+  tags: common, software
+
+- name: Install Flatpak Apps
+  flatpak:
+    name: "{{ item.name }}"
+    remote: "{{ item.remote }}"
+    state: present
+  loop: "{{ flatpak_packages_present }}"
+  when: item.name is defined
+  tags: common, software
+
+
+- name: Perform apt autoremove
+  apt:
+    autoremove: yes
+  tags: common, software

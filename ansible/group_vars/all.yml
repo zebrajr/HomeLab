@@ -1,0 +1,18 @@
+# Common variables
+apt_cache_valid_time: 3600
+
+# Personal system variables
+update_packages: true
+upgrade_packages: true
+install_security_updates: true
+
+
+software_packages_present:
+  - htop
+  - btop
+  - tmux
+  - gparted
+  - openssh-server
+  - vim
+  - git
+  - curl

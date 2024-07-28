@@ -1,0 +1,9 @@
+---
+- hosts: local
+  become: yes
+  roles:
+    - common
+    - security
+    - software
+  vars_files:
+    - group_vars/{{ target_system }}.yml

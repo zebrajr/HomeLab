@@ -1,0 +1,4 @@
+# Server system variables
+update_packages: true
+upgrade_packages: true
+install_security_updates: true

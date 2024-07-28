@@ -1,0 +1,30 @@
+# Personal system variables
+update_packages: true
+upgrade_packages: true
+install_security_updates: true
+
+
+software_packages_present:
+  - gnome-tweaks
+  - gnome-shell-extensions
+  - keepassxc
+  - vlc
+  - ubuntu-restricted-extras
+  - virt-manager
+  - qemu-kvm
+  - bridge-utils
+  - docker
+  - docker-compose
+  - steam
+  - clementine
+  - rclone
+  - rclone-browser
+
+
+flatpak_packages_present:
+  - name: com.jgraph.drawio.desktop
+    remote: flathub
+  - name: org.gimp.GIMP
+    remote: flathub
+  - name: org.gimp.GIMP.Plugin.GMic
+    remote: flathub
