@@ -4,7 +4,9 @@ upgrade_packages: true
 install_security_updates: true
 
 
-software_packages_present:
+run_workstation_tasks: true
+
+software_packages_workstation_present:
   - gnome-tweaks
   - gnome-shell-extensions
   - keepassxc
@@ -21,7 +23,7 @@ software_packages_present:
   - rclone-browser
 
 
-flatpak_packages_present:
+flatpak_packages_workstation_present:
   - name: com.jgraph.drawio.desktop
     remote: flathub
   - name: org.gimp.GIMP

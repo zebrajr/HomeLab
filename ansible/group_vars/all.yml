@@ -6,8 +6,10 @@ update_packages: true
 upgrade_packages: true
 install_security_updates: true
 
+run_htpc_tasks: false
+run_workstation_tasks: false
 
-software_packages_present:
+software_packages_common_present:
   - htop
   - btop
   - tmux
@@ -16,3 +18,5 @@ software_packages_present:
   - vim
   - git
   - curl
+  - vlc
+  

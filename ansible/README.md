@@ -2,6 +2,7 @@
 # ToDo
 
 1. Add External Software to "personal" playbook (vscodium, brave)
+2. Fix gnome tweak not being applied to the user correctly
 
 
 # Using the Playbook
@@ -27,9 +28,18 @@
 
 - install_security_updates
 
-- software_packages_present
+- run_htpc_tasks
 
-- flatpak_packages
+- run_workstation_tasks
+
+- flatpak_packages_workstation_present
+
+- software_packages_common_present
+
+- software_packages_htpc_present
+
+- software_packages_workstation_present
+
 
 ## Used Tags
 - all

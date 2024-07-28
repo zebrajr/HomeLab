@@ -1,0 +1,6 @@
+- name: Install desired Workstation software packages
+  apt:
+    name: "{{ software_packages_workstation_present }}"
+    state: present
+  when: software_packages_workstation_present is defined
+  tags: workstation, software

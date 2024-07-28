@@ -1,36 +1,18 @@
 ---
-- name: Install desired software packages
-  apt:
-    name: "{{ software_packages_present }}"
-    state: present
-  when: software_packages is defined
-  tags: common, software
 
+- name: Including "apt" related tasks if requested
+  include_tasks: apt.yml
 
-- name: Ensure flatpak is installed
-  package:
-    name: flatpak
-    state: present
-  when: flatpak_packages_present is defined
-  tags: common, software
+- name: Including "flatpak" related tasks if requested
+  include_tasks: flatpak.yml
 
-- name: Add Flatpak remote
-  flatpak_remote:
-    name: "{{ item.remote }}"
-    state: present
-  loop: "{{ flatpak_packages_present }}"
-  when: item.remote is defined
-  tags: common, software
+- name: Including HTPC related tasks if requested
+  include_tasks: htpc.yml
+  when: run_htpc_tasks | bool
 
-- name: Install Flatpak Apps
-  flatpak:
-    name: "{{ item.name }}"
-    remote: "{{ item.remote }}"
-    state: present
-  loop: "{{ flatpak_packages_present }}"
-  when: item.name is defined
-  tags: common, software
-
+- name: Including "Workstation" related tasks if requested
+  include_tasks: workstation.yml
+  when: run_workstation_tasks | bool
 
 - name: Perform apt autoremove
   apt:

@@ -1,0 +1,7 @@
+- name: Install desired common software packages
+  apt:
+    name: "{{ software_packages_common_present }}"
+    state: present
+  when: software_packages_common_present is defined
+  tags: common, software
+

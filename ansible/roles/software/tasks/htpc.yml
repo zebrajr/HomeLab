@@ -1,0 +1,19 @@
+- name: Install HTPC software packages
+  apt:
+    name: "{{ software_packages_htpc_present }}"
+    state: present
+  when: software_packages_htpc_present is defined
+  tags: common, software, htpc
+
+
+- name: Copy the flex-launcher .deb file to the target system
+  copy:
+    src: flex-launcher_2.1_amd64.deb
+    dest: /tmp/flex-launcher_2.1_amd64.deb
+
+- name: Install the flex-launcher package
+  apt:
+    deb: /tmp/flex-launcher_2.1_amd64.deb
+    state: present
+
+

@@ -1,0 +1,11 @@
+---
+- name: Ensure gsettings and dconf are installed
+  apt:
+    name:
+      - gsettings-desktop-schemas
+      - dconf-cli
+    state: present
+
+- name: Change Window Action Key to Alt
+  command: gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
+  changed_when: false
