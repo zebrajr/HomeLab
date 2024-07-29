@@ -12,5 +12,5 @@
     method: system
     state: present
   loop: "{{ flapak_common_remotes }}"
-  when: item.remote is defined
+  when: flapak_common_remotes is defined
   tags: common, software

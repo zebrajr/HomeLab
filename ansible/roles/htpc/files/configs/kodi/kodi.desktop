@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Kodi
+Comment=This session will start Kodi media center
+Exec=flatpak run tv.kodi.Kodi
+TryExec=flatpak run tv.kodi.Kodi
+Type=Application
+Keywords=audio;video;media;center;tv;movies;series;songs;remote;
+Icon=kodi

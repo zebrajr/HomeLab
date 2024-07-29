@@ -7,7 +7,9 @@
 
 # Custom user setup Tasks
 - import_tasks: users/htpc_users.yml
+- import_tasks: users/htpc_main_user.yml
 
 # Custom System Setup Tasks
 - import_tasks: system_setup/shared_directories.yml
+- import_tasks: system_setup/autologin.yml
 

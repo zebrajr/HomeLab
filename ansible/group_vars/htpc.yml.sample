@@ -12,8 +12,8 @@ flatpak_packages_htpc_present:
   - tv.kodi.Kodi
   - org.libretro.RetroArch
 
-
-htpc_shared_directory_owner: htpc_user
+htpc_main_user: htpc_user
+htpc_main_user_password: htpc
 htpc_shared_directory_group: htpc
 
 htpc_shared_directories:
@@ -27,8 +27,9 @@ htpc_shared_directories:
 htpc_groups_present:
   - htpc
 
+
 htpc_users_present:
   REPLACE_THIS_your-main-user:
     - htpc
-  htpc_user:
+  "{{ htpc_main_user }}":
     - htpc

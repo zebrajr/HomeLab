@@ -1,0 +1,70 @@
+- name: htpc setup | Ensure correct password for htpc main user
+  user:
+    name: "{{ htpc_main_user }}"
+    password: "{{ htpc_main_user_password | password_hash('sha512') }}"
+    shell: /bin/bash
+    update_password: always
+
+- name: htpc setup | create directories for {{ htpc_main_user }}
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    mode: '0755'
+  with_items:
+    - /home/{{ htpc_main_user }}/.config/autostart
+    - /home/{{ htpc_main_user }}/.config/flex-launcher/
+
+# .config files
+- name: htpc setup | copy flex-launcher config.ini to {{ htpc_main_user }} .config
+  copy:
+    src: files/configs/flex-launcher/config.ini
+    dest: /home/{{ htpc_main_user }}/.config/flex-launcher/config.ini
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    mode: '0755'
+
+- name: htpc setup | copy flex-launcher.desktop to autostart directory
+  copy:
+    src: files/configs/flex-launcher/flex-launcher.desktop
+    dest: /home/{{ htpc_main_user }}/.config/autostart/flex-launcher.desktop
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    mode: '0755'
+
+
+# Desktop
+- name: htpc setup | copy flex-launcher.desktop to desktop
+  copy:
+    src: files/configs/flex-launcher/flex-launcher.desktop
+    dest: /home/{{ htpc_main_user }}/Desktop/flex-launcher.desktop
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    mode: '0755'
+
+- name: htpc setup | copy retroarch.desktop to desktop
+  copy:
+    src: files/configs/retroarch/retroarch.desktop
+    dest: /home/{{ htpc_main_user }}/Desktop/retroarch.desktop
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    mode: '0755'
+
+
+# /usr/share/applications
+- name: htpc setup | copy retroarch.desktop to /usr/share/applications
+  copy:
+    src: files/configs/retroarch/retroarch.desktop
+    dest: /usr/share/applications/retroarch.desktop
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: htpc setup | copy kodi.desktop to /usr/share/applications
+  copy:
+    src: files/configs/kodi/kodi.desktop
+    dest: /usr/share/applications/kodi.desktop
+    owner: root
+    group: root
+    mode: '0644'

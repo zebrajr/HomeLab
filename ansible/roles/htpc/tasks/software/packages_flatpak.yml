@@ -9,8 +9,8 @@
 
 - name: htpc setup | install Flatpak Apps
   flatpak:
-    name: "{{ item.name }}"
+    name: "{{ item }}"
     state: present
   loop: "{{ flatpak_packages_htpc_present }}"
-  when: item.name is defined
+  when: flatpak_packages_htpc_present is defined
   tags: common, software

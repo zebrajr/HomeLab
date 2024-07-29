@@ -1,0 +1,16 @@
+- name: htpc setup | set GDM to autologin for user | "{{ htpc_main_user }}" 
+  lineinfile:
+    path: /etc/gdm3/custom.conf
+    regexp: '{{ item.regexp }}'
+    line: '{{ item.line }}'
+    state: present
+    create: yes
+  loop:
+    - { regexp: '^AutomaticLoginEnable', line: 'AutomaticLoginEnable=True' }
+    - { regexp: '^AutomaticLogin', line: 'AutomaticLogin={{ htpc_main_user }}' }
+
+- name:  htpc setup | Restart GDM
+  service:
+    name: gdm
+    state: restarted
+    enabled: yes
