@@ -7,20 +7,21 @@ install_security_updates: true
 run_workstation_tasks: true
 
 software_packages_workstation_present:
-  - gnome-tweaks
-  - gnome-shell-extensions
-  - keepassxc
-  - vlc
-  - ubuntu-restricted-extras
-  - virt-manager
-  - qemu-kvm
   - bridge-utils
+  - clementine
   - docker
   - docker-compose
-  - steam
-  - clementine
+  - keepassxc
+  - nmap
+  - qemu-kvm
   - rclone
   - rclone-browser
+  - steam
+  - ubuntu-restricted-extras
+  - virt-manager
+  - zsh
+
+
 
 
 flatpak_packages_workstation_present:

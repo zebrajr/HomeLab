@@ -6,6 +6,10 @@ update_packages: true
 upgrade_packages: true
 install_security_updates: true
 
+# Users used in all systems
+common_users:
+  - name: your-user-name
+
 # Variables to define if specific tasks should be run
 run_htpc_tasks: false
 run_workstation_tasks: false
@@ -18,13 +22,21 @@ flapak_common_remotes:
 
 # Software to be installed in every system
 software_packages_common_present:
-  - htop
   - btop
-  - tmux
-  - gparted
-  - openssh-server
-  - vim
-  - git
   - curl
+  - git
+  - gnome-shell-extensions
+  - gnome-tweaks
+  - gparted
+  - htop
+  - iotop
+  - ncdu
+  - neofetch
+  - openssh-server
+  - rsync
+  - tmux
+  - vim
   - vlc
+  - wget
+
   

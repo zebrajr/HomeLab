@@ -1,3 +1,7 @@
+# Usage
+- make a copy of the `all.yml.sample` into `all.yml` (and any other role you might want)
+- adapt as needed
+- run the playbook
 
 # ToDo
 
@@ -5,7 +9,7 @@
 2. Fix gnome tweak not being applied to the user correctly
 
 
-# Using the Playbook
+# Adapting the Playbook for yourself
 
 ## Used Vars
 

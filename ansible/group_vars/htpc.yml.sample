@@ -6,5 +6,4 @@ install_security_updates: true
 run_htpc_tasks: true
 
 software_packages_htpc_present:
-  - gnome-tweaks
-  - gnome-shell-extensions
+  - btop

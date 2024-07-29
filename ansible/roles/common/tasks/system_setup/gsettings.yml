@@ -1,0 +1,12 @@
+- name: gsettings setup | Ensure gsettings and dconf are installed
+  apt:
+    name:
+      - gsettings-desktop-schemas
+      - dconf-cli
+    state: present
+
+- name: gsettings setup | Change Super Action Key to Alt
+  become_user: "{{ item.name }}"
+  command: gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
+  loop: "{{ common_users }}"
+  when: common_users is not none
