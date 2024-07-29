@@ -3,7 +3,32 @@ update_packages: true
 upgrade_packages: true
 install_security_updates: true
 
-run_htpc_tasks: true
-
 software_packages_htpc_present:
   - btop
+
+#flatpak_htpc_remotes:
+
+flatpak_packages_htpc_present:
+  - tv.kodi.Kodi
+  - org.libretro.RetroArch
+
+
+htpc_shared_directory_owner: htpc_user
+htpc_shared_directory_group: htpc
+
+htpc_shared_directories:
+  - /home/shared/media
+  - /home/shared/media/anime
+  - /home/shared/media/movies
+  - /home/shared/media/music
+  - /home/shared/media/shows
+  - /home/shared/emulation
+
+htpc_groups_present:
+  - htpc
+
+htpc_users_present:
+  REPLACE_THIS_your-main-user:
+    - htpc
+  htpc_user:
+    - htpc

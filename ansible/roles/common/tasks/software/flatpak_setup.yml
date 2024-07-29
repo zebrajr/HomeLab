@@ -7,7 +7,9 @@
 
 - name: system setup | add flatpak remotes
   flatpak_remote:
-    name: "{{ item.remote }}"
+    name: "{{ item.name }}"
+    flatpakrepo_url: "{{ item.remoteurl }}"
+    method: system
     state: present
   loop: "{{ flapak_common_remotes }}"
   when: item.remote is defined

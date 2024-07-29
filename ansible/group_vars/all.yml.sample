@@ -8,16 +8,12 @@ install_security_updates: true
 
 # Users used in all systems
 common_users:
-  - name: your-user-name
-
-# Variables to define if specific tasks should be run
-run_htpc_tasks: false
-run_workstation_tasks: false
-
+  - name: REPLACE_THIS_your-user-name
 
 # Flatpak Remotes to be used by all systems
 flapak_common_remotes:
-  - flathub
+  - name: flathub
+    remoteurl: https://dl.flathub.org/repo/flathub.flatpakrepo
 
 
 # Software to be installed in every system

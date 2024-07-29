@@ -1,0 +1,9 @@
+- name: htpc setup | ensure /home/shared directory exists
+  file:
+    path: "{{ item }}"
+    owner: "{{ htpc_shared_directory_owner }}"
+    group: "{{ htpc_shared_directory_group }}"
+    state: directory
+    mode: '0775'
+    recurse: yes
+  loop: "{{ htpc_shared_directories }}"

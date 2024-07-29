@@ -9,3 +9,7 @@
     upgrade: dist
   when: upgrade_packages
   tags: all, common
+
+
+- name: system setup | update flatpaks
+  command: flatpak update -y

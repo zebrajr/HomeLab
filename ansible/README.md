@@ -1,5 +1,6 @@
 # Usage
 - make a copy of the `all.yml.sample` into `all.yml` (and any other role you might want)
+  - a quick starting point is by looking for `REPLACE_THIS_`
 - adapt as needed
 - run the playbook
 
@@ -31,10 +32,6 @@
 - upgrade_packages
 
 - install_security_updates
-
-- run_htpc_tasks
-
-- run_workstation_tasks
 
 - flatpak_packages_workstation_present
 
