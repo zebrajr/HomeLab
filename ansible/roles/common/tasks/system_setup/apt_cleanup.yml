@@ -1,0 +1,4 @@
+- name: system setup | perform apt autoremove
+  apt:
+    autoremove: yes
+  tags: common, software

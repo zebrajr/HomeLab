@@ -1,17 +1,4 @@
-- name: Ensure flatpak is installed
-  package:
-    name: flatpak
-    state: present
-  when: flatpak_packages_workstation_present is defined
-  tags: common, software
 
-- name: Add Flatpak remote
-  flatpak_remote:
-    name: "{{ item.remote }}"
-    state: present
-  loop: "{{ flatpak_packages_workstation_present }}"
-  when: item.remote is defined
-  tags: common, software
 
 - name: Install Flatpak Apps
   flatpak:

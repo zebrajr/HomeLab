@@ -1,20 +1,4 @@
----
-
-- name: Including "apt" related tasks if requested
-  include_tasks: apt.yml
-
-- name: Including "flatpak" related tasks if requested
-  include_tasks: flatpak.yml
-
-- name: Including HTPC related tasks if requested
-  include_tasks: htpc.yml
-  when: run_htpc_tasks | bool
-
 - name: Including "Workstation" related tasks if requested
   include_tasks: workstation.yml
   when: run_workstation_tasks | bool
 
-- name: Perform apt autoremove
-  apt:
-    autoremove: yes
-  tags: common, software

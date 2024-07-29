@@ -1,0 +1,6 @@
+- name: htpc setup | install htpc software packages
+  apt:
+    name: "{{ software_packages_htpc_present }}"
+    state: present
+  when: software_packages_htpc_present is defined
+  tags: common, software, htpc

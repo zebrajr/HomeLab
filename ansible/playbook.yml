@@ -1,10 +1,17 @@
 ---
 - hosts: local
   become: yes
+
+  #tasks:
+  #  - name: setup | include group vars
+  #    include_vars: "group_vars/{{ target_system }}.yml"
+
   roles:
     - common
-    - security
-    - software
-    - tweaks
+    - { role: htpc, when target_system == 'htpc'}
+    # - security
+    # - software
+    # - tweaks
+
   vars_files:
-    - group_vars/{{ target_system }}.yml
+   - group_vars/{{ target_system }}.yml

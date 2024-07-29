@@ -1,0 +1,5 @@
+# Install packages related to HTPC systems
+- import_tasks: software/packages_apt.yml
+
+# Install custom software packages
+- import_tasks: software/flex_launcher.yml

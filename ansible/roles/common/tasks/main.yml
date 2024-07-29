@@ -1,18 +1,16 @@
----
-- name: Update apt cache if needed
-  apt:
-    update_cache: yes
-    cache_valid_time: "{{ apt_cache_valid_time }}"
-  tags: all, common
 
-- name: Upgrade all packages to the latest version
-  apt:
-    upgrade: dist
-  when: upgrade_packages
-  tags: all, common
+- block:
+  # Flatpak dependencies and remote hubs
+  - import_tasks: software/flatpak_setup.yml
 
-- name: Update all installed packages
-  apt:
-    upgrade: safe
-  when: update_packages
-  tags: all, common
+  # Packages Update & Upgrade related tasks
+  - import_tasks: software/packages_update.yml
+
+  # Common package installation
+  - import_tasks: software/packages_apt.yml
+
+  # Common security update tasks
+  - import_tasks: system_setup/security_updates.yml
+
+  # Common apt cleanup tasks
+  - import_tasks: system_setup/apt_cleanup.yml

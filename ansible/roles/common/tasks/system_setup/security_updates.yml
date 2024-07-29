@@ -1,5 +1,4 @@
----
-- name: Install security updates
+- name: system setup | install security updates
   apt:
     upgrade: dist
     update_cache: yes

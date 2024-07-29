@@ -6,9 +6,17 @@ update_packages: true
 upgrade_packages: true
 install_security_updates: true
 
+# Variables to define if specific tasks should be run
 run_htpc_tasks: false
 run_workstation_tasks: false
 
+
+# Flatpak Remotes to be used by all systems
+flapak_common_remotes:
+  - flathub
+
+
+# Software to be installed in every system
 software_packages_common_present:
   - htop
   - btop
