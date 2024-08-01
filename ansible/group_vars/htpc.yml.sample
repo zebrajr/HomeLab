@@ -11,6 +11,7 @@ software_packages_htpc_present:
 flatpak_packages_htpc_present:
   - tv.kodi.Kodi
   - org.libretro.RetroArch
+  - com.moonlight_stream.Moonlight
 
 htpc_main_user: htpc_user
 htpc_main_user_password: htpc
