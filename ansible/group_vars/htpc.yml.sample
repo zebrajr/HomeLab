@@ -19,10 +19,15 @@ htpc_shared_directory_group: htpc
 htpc_shared_directories:
   - /home/shared/media
   - /home/shared/media/anime
+  - "{{ htpc_shared_directory_background_images }}"
   - /home/shared/media/movies
   - /home/shared/media/music
+  - /home/shared/media/pictures
   - /home/shared/media/shows
   - /home/shared/emulation
+
+
+htpc_shared_directory_background_images: /home/shared/media/backgrounds
 
 htpc_groups_present:
   - htpc
