@@ -1,0 +1,6 @@
+- name: system setup | common packages | install pip
+  pip:
+    name: "{{ software_pip_common_present }}"
+    state: present
+  when: software_pip_common_present is defined
+  tags: common, software

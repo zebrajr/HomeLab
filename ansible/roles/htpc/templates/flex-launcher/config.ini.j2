@@ -25,7 +25,8 @@ OverlayOpacity=30%
 
 [Layout]
 MaxButtons=4
-IconSize=256
+#IconSize=256
+IconSize=128
 IconSpacing=5%
 VCenter=50%
 
@@ -59,8 +60,8 @@ OutlineColor=#000000
 Opacity=100%
 
 [Clock]
-Enabled=false
-ShowDate=false
+Enabled=true
+ShowDate=true
 Alignment=Left
 Font=/usr/share/flex-launcher/assets/fonts/SourceSansPro-Regular.ttf
 FontSize=50
@@ -69,8 +70,8 @@ Shadows=false
 ShadowColor=#000000
 Margin=5%
 Opacity=100%
-TimeFormat=Auto
-DateFormat=Auto
+TimeFormat=24hr
+DateFormat=Little
 IncludeWeekday=true
 
 [Screensaver]
@@ -117,6 +118,8 @@ ButtonDPadRight=:right
 [Main]
 Entry1=Kodi;/usr/share/flex-launcher/assets/icons/kodi.png;/usr/share/applications/kodi.desktop
 Entry2=RetroArch;/usr/share/flex-launcher/assets/icons/retroarch.png;/usr/share/applications/retroarch.desktop
+Entry3=Firefox;/usr/share/flex-launcher/assets/icons/firefox.png;/usr/bin/firefox
+#Entry3=Firefox;/usr/share/flex-launcher/assets/icons/firefox.png;/usr/bin/share/applications/firefox.desktop
 #Entry3=Steam;/usr/share/flex-launcher/assets/icons/steam.png;/usr/share/applications/steam.desktop;BigPicture
 Entry4=System;/usr/share/flex-launcher/assets/icons/system.png;:submenu System
 

@@ -6,6 +6,7 @@
 
   # Common package installation
   - import_tasks: software/packages_apt.yml
+  - import_tasks: software/packages_pip.yml
 
   # Common system setup tasks
   - import_tasks: system_setup/security_updates.yml

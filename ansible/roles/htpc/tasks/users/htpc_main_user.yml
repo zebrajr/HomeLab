@@ -25,7 +25,7 @@
 #     group: "{{ htpc_main_user }}"
 #     mode: '0755'
 
-- name: htpc setup | deploy flex-launcher config.ini file
+- name: htpc setup | flex-launcher | deploy config.ini template
   template:
     src: templates/flex-launcher/config.ini.j2
     dest: /home/{{ htpc_main_user }}/.config/flex-launcher/config.ini
@@ -33,7 +33,7 @@
     group: "{{ htpc_main_user }}"
     mode: '0755'
 
-- name: htpc setup | copy flex-launcher.desktop to autostart directory
+- name: htpc setup | flex-launcher | copy .desktop to autostart directory
   copy:
     src: files/configs/flex-launcher/flex-launcher.desktop
     dest: /home/{{ htpc_main_user }}/.config/autostart/flex-launcher.desktop
@@ -41,24 +41,10 @@
     group: "{{ htpc_main_user }}"
     mode: '0755'
 
-
-# Desktop
-- name: htpc setup | copy flex-launcher.desktop to desktop
+- name: htpc setup | flex-launcher | copy firefox icon to assets
   copy:
-    src: files/configs/flex-launcher/flex-launcher.desktop
-    dest: /home/{{ htpc_main_user }}/Desktop/flex-launcher.desktop
-    owner: "{{ htpc_main_user }}"
-    group: "{{ htpc_main_user }}"
-    mode: '0755'
-
-- name: htpc setup | copy retroarch.desktop to desktop
-  copy:
-    src: files/configs/retroarch/retroarch.desktop
-    dest: /home/{{ htpc_main_user }}/Desktop/retroarch.desktop
-    owner: "{{ htpc_main_user }}"
-    group: "{{ htpc_main_user }}"
-    mode: '0755'
-
+    src: files/configs/flex-launcher/firefox.png
+    dest: /usr/share/flex-launcher/assets/icons/firefox.png
 
 # /usr/share/applications
 - name: htpc setup | copy retroarch.desktop to /usr/share/applications
@@ -76,3 +62,13 @@
     owner: root
     group: root
     mode: '0644'
+
+
+- name: htpc setup | set main user dock applications
+  become: yes
+  become_user: "{{ htpc_main_user }}"
+  community.general.dconf:
+    key: "/org/gnome/shell/favorite-apps"
+    value: "['pop-cosmic-launcher.desktop', 'pop-cosmic-applications.desktop', 'flex-launcher.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'gnome-control-center.desktop']"
+    state: present
+  
