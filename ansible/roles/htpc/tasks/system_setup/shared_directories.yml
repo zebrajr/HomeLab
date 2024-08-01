@@ -1,0 +1,18 @@
+- name: htpc setup | ensure /home/shared directory exists
+  file:
+    path: "{{ item }}"
+    owner: "{{ htpc_main_user }}"
+    group: "{{ htpc_main_user }}"
+    state: directory
+    mode: '0775'
+    recurse: yes
+  loop: "{{ htpc_shared_directories }}"
+
+
+- name: htpc setup | ensure shared directories are available to flatpaks
+  command: flatpak override --filesystem={{ item.1 }} {{ item.0 }}
+  with_nested:
+    - "{{ flatpak_packages_htpc_present }}"
+    - "{{ htpc_shared_directories }}"
+  loop_control:
+    loop_var: item

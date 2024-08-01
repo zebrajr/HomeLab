@@ -1,0 +1,16 @@
+---
+- hosts: local
+  become: yes
+  vars:
+    ansible_become_username: "{{ become_username }}"
+    ansible_become_pass: "{{ become_password }}"
+
+  vars_files:
+   - group_vars/{{ target_system }}.yml
+   - encrypted_vars/encrypted_vars.yml
+  
+  roles:
+    - common
+    - { role: htpc, when target_system == 'htpc'}
+    
+  

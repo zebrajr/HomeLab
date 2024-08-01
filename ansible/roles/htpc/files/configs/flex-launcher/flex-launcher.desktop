@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=flex-launcher
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Flex Launcher
+Comment=Start Flex Launcher automatically

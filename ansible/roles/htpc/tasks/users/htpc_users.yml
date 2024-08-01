@@ -1,0 +1,14 @@
+- name: htpc setup | Ensure groups exist
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ htpc_groups_present }}"
+
+
+- name: htpc setup | Ensure users exist and are members of the correct groups
+  user:
+    name: "{{ item.key }}"
+    groups: "{{ item.value | join(',') }}"
+    shell: /bin/bash
+    append: yes
+  loop: "{{ htpc_users_present | dict2items }}"

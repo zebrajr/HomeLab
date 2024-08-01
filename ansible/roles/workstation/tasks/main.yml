@@ -1,0 +1,3 @@
+# Install workstation specific software
+- import_tasks: software/flatpak.yml
+- import_tasks: software/packages.yml

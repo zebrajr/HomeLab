@@ -1,0 +1,3 @@
+# Ignore custom group_vars
+ansible/group_vars/*.yml
+ansible/encrypted_vars

@@ -1,0 +1,16 @@
+- name: htpc setup | add flatpak remotes
+  flatpak_remote:
+    name: "{{ item.name }}"
+    flatpakrepo_url: "{{ item.remoteurl }}"
+    state: present
+  loop: "{{ flatpak_htpc_remotes }}"
+  when: flatpak_htpc_remotes is defined
+  tags: common, software
+
+- name: htpc setup | install Flatpak Apps
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ flatpak_packages_htpc_present }}"
+  when: flatpak_packages_htpc_present is defined
+  tags: common, software

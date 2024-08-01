@@ -1,0 +1,15 @@
+# Install packages related to HTPC systems
+- import_tasks: software/packages_apt.yml
+- import_tasks: software/packages_flatpak.yml
+
+# Install custom software packages
+- import_tasks: software/flex_launcher.yml
+
+# Custom user setup Tasks
+- import_tasks: users/htpc_users.yml
+- import_tasks: users/htpc_main_user.yml
+
+# Custom System Setup Tasks
+- import_tasks: system_setup/shared_directories.yml
+- import_tasks: system_setup/autologin.yml
+

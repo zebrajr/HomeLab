@@ -1,0 +1,16 @@
+- name: system setup | flatpak is present 
+  package:
+    name: flatpak
+    state: present
+  when: flapak_common_remotes is defined
+  tags: common, software
+
+- name: system setup | add flatpak remotes
+  flatpak_remote:
+    name: "{{ item.name }}"
+    flatpakrepo_url: "{{ item.remoteurl }}"
+    method: system
+    state: present
+  loop: "{{ flapak_common_remotes }}"
+  when: flapak_common_remotes is defined
+  tags: common, software

@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=ConkyZebra
-Exec=conky /home/csa/.config/conky/main.conf
-Icon=/usr/share/icons/hicolor/scalable/apps/conky-logomark-violet.svg
-Comment=Conky with Zebra Config
-X-GNOME-Autostart-enabled=true

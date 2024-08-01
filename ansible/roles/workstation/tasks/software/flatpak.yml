@@ -1,0 +1,8 @@
+- name: Install Flatpak Apps
+  flatpak:
+    name: "{{ item.name }}"
+    remote: "{{ item.remote }}"
+    state: present
+  loop: "{{ flatpak_packages_workstation_present }}"
+  when: item.name is defined
+  tags: common, software

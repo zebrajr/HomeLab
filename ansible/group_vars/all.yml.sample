@@ -1,0 +1,42 @@
+# Common variables
+apt_cache_valid_time: 3600
+
+# Personal system variables
+update_packages: true
+upgrade_packages: true
+install_security_updates: true
+
+# Users used in all systems
+common_users:
+  - name: REPLACE_THIS_your-user-name
+
+# Flatpak Remotes to be used by all systems
+flapak_common_remotes:
+  - name: flathub
+    remoteurl: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+
+# Software to be installed in every system
+software_packages_common_present:
+  - ansible
+  - btop
+  - curl
+  - git
+  - gnome-shell-extensions
+  - gnome-tweaks
+  - gparted
+  - htop
+  - iotop
+  - ncdu
+  - neofetch
+  - openssh-server
+  - pip
+  - rsync
+  - tmux
+  - vim
+  - vlc
+  - wget
+
+
+software_pip_common_present:
+  - psutil

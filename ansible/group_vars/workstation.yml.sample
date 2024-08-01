@@ -1,0 +1,33 @@
+# Personal system variables
+update_packages: true
+upgrade_packages: true
+install_security_updates: true
+
+
+run_workstation_tasks: true
+
+software_packages_workstation_present:
+  - bridge-utils
+  - clementine
+  - docker
+  - docker-compose
+  - keepassxc
+  - nmap
+  - qemu-kvm
+  - rclone
+  - rclone-browser
+  - steam
+  - ubuntu-restricted-extras
+  - virt-manager
+  - zsh
+
+
+
+
+flatpak_packages_workstation_present:
+  - name: com.jgraph.drawio.desktop
+    remote: flathub
+  - name: org.gimp.GIMP
+    remote: flathub
+  - name: org.gimp.GIMP.Plugin.GMic
+    remote: flathub
