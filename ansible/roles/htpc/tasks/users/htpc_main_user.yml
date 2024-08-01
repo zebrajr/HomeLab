@@ -25,6 +25,7 @@
 #     group: "{{ htpc_main_user }}"
 #     mode: '0755'
 
+
 - name: htpc setup | flex-launcher | deploy config.ini template
   template:
     src: templates/flex-launcher/config.ini.j2
@@ -41,12 +42,18 @@
     group: "{{ htpc_main_user }}"
     mode: '0755'
 
+# flex-launcher extra assets
 - name: htpc setup | flex-launcher | copy firefox icon to assets
   copy:
     src: files/configs/flex-launcher/firefox.png
     dest: /usr/share/flex-launcher/assets/icons/firefox.png
 
-# /usr/share/applications
+- name: htpc setup | flex-launcher | copy moonlight icon to assets
+  copy:
+    src: files/configs/flex-launcher/moonlight.png
+    dest: /usr/share/flex-launcher/assets/icons/moonlight.png
+
+# /usr/share/applications extra .desktop files
 - name: htpc setup | copy retroarch.desktop to /usr/share/applications
   copy:
     src: files/configs/retroarch/retroarch.desktop
@@ -59,6 +66,14 @@
   copy:
     src: files/configs/kodi/kodi.desktop
     dest: /usr/share/applications/kodi.desktop
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: htpc setup | copy moonlight.desktop to /usr/share/applications
+  copy:
+    src: files/configs/moonlight/moonlight.desktop
+    dest: /usr/share/applications/moonlight.desktop
     owner: root
     group: root
     mode: '0644'
