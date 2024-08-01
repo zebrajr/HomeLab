@@ -17,9 +17,17 @@
     - /home/{{ htpc_main_user }}/.config/flex-launcher/
 
 # .config files
-- name: htpc setup | copy flex-launcher config.ini to {{ htpc_main_user }} .config
-  copy:
-    src: files/configs/flex-launcher/config.ini
+# - name: htpc setup | copy flex-launcher config.ini to {{ htpc_main_user }} .config
+#   copy:
+#     src: files/configs/flex-launcher/config.ini
+#     dest: /home/{{ htpc_main_user }}/.config/flex-launcher/config.ini
+#     owner: "{{ htpc_main_user }}"
+#     group: "{{ htpc_main_user }}"
+#     mode: '0755'
+
+- name: htpc setup | deploy flex-launcher config.ini file
+  template:
+    src: templates/flex-launcher/config.ini.j2
     dest: /home/{{ htpc_main_user }}/.config/flex-launcher/config.ini
     owner: "{{ htpc_main_user }}"
     group: "{{ htpc_main_user }}"

@@ -18,6 +18,7 @@ flapak_common_remotes:
 
 # Software to be installed in every system
 software_packages_common_present:
+  - ansible
   - btop
   - curl
   - git
@@ -34,5 +35,3 @@ software_packages_common_present:
   - vim
   - vlc
   - wget
-
-  
