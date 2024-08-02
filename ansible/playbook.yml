@@ -42,7 +42,7 @@
         name: workstation
       when: target_system == 'workstation'
 
-    - name: include playstation role
+    - name: include personalstation role
       include_role:
-        name: playstation
-      when: target_system == 'playstation'
+        name: personalstation
+      when: target_system == 'personalstation'

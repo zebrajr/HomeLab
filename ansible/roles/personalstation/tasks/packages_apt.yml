@@ -1,0 +1,6 @@
+- name: personalstation setup | install software packages
+  apt:
+    name: "{{ software_packages_personalstation_present }}"
+    state: present
+  when: software_packages_personalstation_present is defined
+  tags: personalstation, software

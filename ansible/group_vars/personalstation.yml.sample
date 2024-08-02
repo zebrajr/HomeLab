@@ -1,10 +1,10 @@
-software_packages_playstation_present:
+software_packages_personalstation_present:
   - steam
   - rclone
   - rclone-browser
   - clementine
 
 
-flatpak_packages_playstation_present:
+flatpak_packages_personalstation_present:
   - name: org.darktable.Darktable
     remote: flathub
