@@ -1,5 +1,0 @@
-export TARGETUSER="remote user eg: docker-user"
-export TARGETIP="remote ip eg: 10.50.20.5"
-export TARGETFOLDER="folder to sync from eg: /home/docker-user/"
-export SOURCEKEY="RSA private key location eg: /home/rsync/.ssh/curiosity"
-export SOURCEFOLDER="destination folder eg: /mnt/raid1/opportunity-clone/"
