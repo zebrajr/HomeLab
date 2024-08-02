@@ -1,0 +1,8 @@
+- name: personalstation setup | Install Flatpak Apps
+  flatpak:
+    name: "{{ item.name }}"
+    remote: "{{ item.remote }}"
+    state: present
+  loop: "{{ flatpak_packages_personalstation_present }}"
+  when: flatpak_packages_personalstation_present is defined
+  tags: common, software

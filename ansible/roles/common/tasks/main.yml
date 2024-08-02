@@ -1,17 +1,16 @@
 
-- block:
-  # common dependencies and updates
-  - import_tasks: software/flatpak_setup.yml
-  - import_tasks: software/packages_update.yml
+# common dependencies and updates
+- include_tasks: software/flatpak_setup.yml
+- include_tasks: software/packages_update.yml
 
-  # Common package installation
-  - import_tasks: software/packages_apt.yml
-  - import_tasks: software/packages_pip.yml
+# Common package installation
+- include_tasks: software/packages_apt.yml
+- include_tasks: software/packages_pip.yml
 
-  # Common system setup tasks
-  - import_tasks: system_setup/security_updates.yml
-  - import_tasks: system_setup/gsettings.yml
+# Common system setup tasks
+- include_tasks: system_setup/security_updates.yml
+- include_tasks: system_setup/gsettings.yml
 
-  # Common apt cleanup tasks
-  - import_tasks: system_setup/apt_cleanup.yml
+# Common apt cleanup tasks
+- include_tasks: system_setup/apt_cleanup.yml
 

@@ -36,6 +36,7 @@ software_packages_common_present:
   - vim
   - vlc
   - wget
+  - zsh
 
 
 software_pip_common_present:
