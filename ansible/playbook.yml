@@ -1,16 +1,48 @@
 ---
-- hosts: local
-  become: yes
-  vars:
-    ansible_become_username: "{{ become_username }}"
-    ansible_become_pass: "{{ become_password }}"
+- hosts: all
+  become: true
 
   vars_files:
-   - group_vars/{{ target_system }}.yml
-   - encrypted_vars/encrypted_vars.yml
+    - group_vars/{{ target_system }}.yml
   
-  roles:
-    - common
-    - { role: htpc, when target_system == 'htpc'}
-    
-  
+  pre_tasks:
+    - name: pre-task | check if encrypted_vars.yml is present
+      stat:
+        path: encrypted_vars/encrypted_vars.yml
+      register: encrypted_vars_file
+
+    - name: pre-task | include encrypted_vars.yml if it exists
+      include_vars:
+        file: encrypted_vars/encrypted_vars.yml
+      when: encrypted_vars_file.stat.exists
+
+    - name: pre-task | set become variables if encrypted_vars.yml exists
+      set_fact:
+        ansible_become_username: "{{ become_username }}"
+        ansible_become_pass: "{{ become_password }}"
+      when: encrypted_vars_file.stat.exists
+
+
+
+- hosts: all
+  become: true
+
+  tasks:
+    - name: run common role
+      include_role:
+        name: common
+
+    - name: include htpc role
+      include_role:
+        name: htpc
+      when: target_system == 'htpc'
+
+    - name: include workstation role
+      include_role:
+        name: workstation
+      when: target_system == 'workstation'
+
+    - name: include playstation role
+      include_role:
+        name: playstation
+      when: target_system == 'playstation'

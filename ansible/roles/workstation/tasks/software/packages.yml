@@ -1,4 +1,4 @@
-- name: Install desired Workstation software packages
+- name: workstation setup | install software packages
   apt:
     name: "{{ software_packages_workstation_present }}"
     state: present

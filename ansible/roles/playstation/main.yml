@@ -1,0 +1,3 @@
+# Install workstation specific software
+- include_tasks: software/packages_flatpak.yml
+- include_tasks: software/packages_apt.yml

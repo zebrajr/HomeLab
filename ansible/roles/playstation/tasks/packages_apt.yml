@@ -1,0 +1,6 @@
+- name: playstation setup | install software packages
+  apt:
+    name: "{{ software_packages_playstation_present }}"
+    state: present
+  when: software_packages_playstation_present is defined
+  tags: playstation, software

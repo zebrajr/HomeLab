@@ -1,3 +1,9 @@
+# Install external repositories software
+- include_tasks: software/brave_browser.yml
+  when:
+    - install_brave is defined
+    - install_brave == true
+
 # Install workstation specific software
-- import_tasks: software/flatpak.yml
-- import_tasks: software/packages.yml
+- include_tasks: software/flatpak.yml
+- include_tasks: software/packages.yml

@@ -4,8 +4,6 @@ upgrade_packages: true
 install_security_updates: true
 
 
-run_workstation_tasks: true
-
 software_packages_workstation_present:
   - bridge-utils
   - clementine
@@ -21,13 +19,16 @@ software_packages_workstation_present:
   - virt-manager
   - zsh
 
-
+# external repository software
+install_brave: true
 
 
 flatpak_packages_workstation_present:
+  - name: com.vscodium.codium
+    remote: flathub
   - name: com.jgraph.drawio.desktop
     remote: flathub
   - name: org.gimp.GIMP
     remote: flathub
-  - name: org.gimp.GIMP.Plugin.GMic
+  - name: org.gimp.GIMP.Plugin.GMic/x86_64/2-40
     remote: flathub

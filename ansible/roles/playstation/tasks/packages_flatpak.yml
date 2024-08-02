@@ -1,0 +1,8 @@
+- name: playstation setup | Install Flatpak Apps
+  flatpak:
+    name: "{{ item.name }}"
+    remote: "{{ item.remote }}"
+    state: present
+  loop: "{{ flatpak_packages_playstation_present }}"
+  when: flatpak_packages_playstation_present is defined
+  tags: common, software
