@@ -1,27 +1,12 @@
-# Personal system variables
-update_packages: true
-upgrade_packages: true
-install_security_updates: true
-
-
 software_packages_workstation_present:
   - bridge-utils
-  - clementine
   - docker
   - docker-compose
   - keepassxc
   - nmap
   - qemu-kvm
-  - rclone
-  - rclone-browser
-  - steam
   - ubuntu-restricted-extras
   - virt-manager
-  - zsh
-
-# external repository software
-install_brave: true
-
 
 flatpak_packages_workstation_present:
   - name: com.vscodium.codium
@@ -32,3 +17,6 @@ flatpak_packages_workstation_present:
     remote: flathub
   - name: org.gimp.GIMP.Plugin.GMic/x86_64/2-40
     remote: flathub
+
+# external repository software
+install_brave: true
