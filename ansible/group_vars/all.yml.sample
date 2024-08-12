@@ -21,6 +21,7 @@ software_packages_common_present:
   - ansible
   - btop
   - curl
+  - duf
   - git
   - gnome-shell-extensions
   - gnome-tweaks
