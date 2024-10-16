@@ -3,6 +3,7 @@ software_packages_personalstation_present:
   - rclone
   - rclone-browser
   - clementine
+  - thunderbird
 
 
 flatpak_packages_personalstation_present:
