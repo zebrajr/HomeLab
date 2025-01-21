@@ -1,3 +1,7 @@
 # Ignore custom group_vars
-ansible/group_vars/*.yml
-ansible/encrypted_vars
+debian-ansible/group_vars/*.yml
+debian-ansible/encrypted_vars
+
+# Ignore custom secrets
+secrets
+encrypted_vars
