@@ -1,0 +1,6 @@
+---
+- name: system | system is updated
+  become: true
+  dnf:
+    name: "*"
+    state: latest

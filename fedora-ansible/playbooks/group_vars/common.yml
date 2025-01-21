@@ -1,0 +1,18 @@
+software_packages_common_present:
+  - ansible
+  - btop
+  - curl
+  - duf
+  - fzf
+  - git
+  - gparted
+  - htop
+  - ncdu
+  - neovim
+  - rsync
+  - timeshift
+  - tmux
+  - vim
+  - vlc
+  - wget
+  - zsh

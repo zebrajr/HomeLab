@@ -1,0 +1,9 @@
+- name: packages | install packages
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ software_packages_workstation_present }}"
+  when: software_packages_workstation_present is defined
+  tags: workstation, software
+

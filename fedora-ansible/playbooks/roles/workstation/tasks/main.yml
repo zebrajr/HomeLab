@@ -1,0 +1,5 @@
+# Install Workstation Specific Applications
+- import_tasks: applications/packages.yml
+
+# Install Workspace Specific Flatpaks
+- import_tasks: applications/flatpaks.yml

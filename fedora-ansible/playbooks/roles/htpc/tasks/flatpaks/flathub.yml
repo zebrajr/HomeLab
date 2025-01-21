@@ -1,0 +1,6 @@
+---
+- name: flatpaks | ensure is installed
+  become: yes
+  dnf:
+    name: flatpak
+    state: latest

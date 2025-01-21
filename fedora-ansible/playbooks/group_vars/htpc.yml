@@ -1,0 +1,28 @@
+htpc_main_username: htpc
+
+software_packages_htpc_present:
+ - firefox
+ - steam
+ - steam-devices
+
+flatpaks_htpc_present:
+ - tv.kodi.Kodi
+ - org.libretro.RetroArch
+
+htpc_groups:
+  - "{{ htpc_main_username }}"
+
+htpc_auto_login_user: "{{ htpc_main_username }}"
+
+# A password can be hashed with mkpasswd
+htpc_users:
+  - username: "{{ htpc_main_username }}"
+    password: $y$j9T$qZyWlxgKK6spWgNXdlJSO.$d2zKSGPhuNcVoPkH5v5EH35eobb8qXk7.vDehEda5v/
+    home: "/home/{{ htpc_main_username }}"
+    groups:
+      - "{{ htpc_main_username }}"
+    shell: /bin/zsh
+
+htpc_roles:
+  - common
+  - htpc

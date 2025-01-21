@@ -1,0 +1,15 @@
+---
+# Packages
+- import_tasks: applications/packages.yml
+
+# Flathub and depedencies
+- import_tasks: flatpaks/flathub.yml
+
+# Flatpaks
+- import_tasks: flatpaks/flatpaks_present.yml
+
+# Users
+- import_tasks: users/htpc.yml
+
+# System Setup
+- import_tasks: systems/autologin.yml

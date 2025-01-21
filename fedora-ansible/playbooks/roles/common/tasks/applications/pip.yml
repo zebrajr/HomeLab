@@ -1,0 +1,8 @@
+- name: pip | install pip packages
+  pip:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ software_pip_common_present }}"
+  when: software_pip_common_present is defined
+  tags: common, software
+

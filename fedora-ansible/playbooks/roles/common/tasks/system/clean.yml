@@ -1,0 +1,5 @@
+---
+- name: system | clean unused 
+  become: true
+  dnf:
+    autoremove: true

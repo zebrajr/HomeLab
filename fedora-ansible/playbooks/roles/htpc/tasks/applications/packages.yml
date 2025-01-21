@@ -1,0 +1,9 @@
+- name: packages | install packages
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ software_packages_htpc_present }}"
+  when: software_packages_htpc_present is defined
+  tags: htpc, software
+

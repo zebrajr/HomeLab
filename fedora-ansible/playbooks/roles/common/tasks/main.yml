@@ -1,0 +1,12 @@
+---
+# System Tasks
+- import_tasks: system/update.yml
+
+# pip packages
+- import_tasks: applications/pip.yml
+
+# Install Applications
+- import_tasks: applications/packages.yml
+
+# Finish Up & Clean
+- import_tasks: system/clean.yml

@@ -1,0 +1,17 @@
+- name: systems | autologin | ensure the sddm configuration directory exists
+  become: true
+  file:
+    path: /etc/sddm.conf.d
+    state: directory
+    mode: '0755'
+
+
+- name: systems | autologin | create SDDM autologin configuration
+  become: true
+  copy:
+    dest: /etc/sddm.conf.d/autologin.conf
+    content: |
+      [Autologin]
+      User={{ htpc_auto_login_user }}
+      Session=plasma.desktop
+    mode: '0644'

@@ -1,0 +1,8 @@
+- name: flatpaks | install flatpaks
+  become: true
+  flatpak:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ flatpaks_workstation_present }}"
+  when: flatpaks_workstation_present is defined
+  tags: htpc, flatpaks

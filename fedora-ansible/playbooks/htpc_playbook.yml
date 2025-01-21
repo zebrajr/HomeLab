@@ -1,0 +1,11 @@
+---
+- hosts: htpc
+  gather_facts: true
+  vars_files:
+    - group_vars/common.yml
+    - group_vars/htpc.yml
+    - secrets/htpc
+
+  roles:
+    - common
+    - htpc

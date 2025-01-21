@@ -1,0 +1,9 @@
+software_packages_battlestation_present:
+  - clementine
+  - darktable
+  - firefox
+  - godot
+  - rclone
+  - rlcone-browser
+  - steam
+  - syncthing
