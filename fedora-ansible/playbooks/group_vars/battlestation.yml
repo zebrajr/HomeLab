@@ -4,6 +4,6 @@ software_packages_battlestation_present:
   - firefox
   - godot
   - rclone
-  - rlcone-browser
+  - rclone-browser
   - steam
   - syncthing

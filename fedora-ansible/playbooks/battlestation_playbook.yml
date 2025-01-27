@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: true
+  vars_files:
+    - group_vars/common.yml
+    - group_vars/battlestation.yml
+
+  roles:
+    - common
+    - battlestation

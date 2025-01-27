@@ -1,0 +1,9 @@
+- name: packages | install packages
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ software_packages_battlestation_present }}"
+  when: software_packages_battlestation_present is defined
+  tags: battlestation, software
+

@@ -1,0 +1,2 @@
+# Install Battlestation Specific Applications
+- import_tasks: applications/packages.yml
