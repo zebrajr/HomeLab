@@ -7,3 +7,14 @@
   when: software_packages_common_present is defined
   tags: common, software
 
+
+- name: packages | remove packages
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: absent
+    autoremove: true
+    allowerasing: true
+  loop: "{{ software_packages_common_absent }}"
+  when: software_packages_common_absent is defined
+  tags: common, software

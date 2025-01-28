@@ -16,3 +16,12 @@ software_packages_common_present:
   - vlc
   - wget
   - zsh
+
+software_packages_common_absent:
+  - akregator
+  - dragon
+  - elisa
+  - kaddressbook
+  - kmail
+  - kontakt
+  - neochat
