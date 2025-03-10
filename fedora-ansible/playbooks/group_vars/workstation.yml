@@ -24,3 +24,6 @@ flatpaks_workstation_present:
   - com.jgraph.drawio.desktop
   - org.gimp.GIMP
   - org.gimp.GIMP.Plugin.GMic/x86_64/2-40
+
+copr_workstation_enabled:
+  - solopasha/hyprland

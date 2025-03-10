@@ -1,0 +1,8 @@
+- name: copr | enable coprs
+  become: true
+  community.general.copr:
+    name: "{{ item }}" 
+    state: enabled
+  loop: "{{ copr_workstation_enabled }}"
+  when: copr_workstation_enabled is defined
+  tags: workstation, coprs

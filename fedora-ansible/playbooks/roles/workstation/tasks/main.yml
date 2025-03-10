@@ -1,3 +1,6 @@
+# Install Workstation Specific Coprs
+- import_tasks: applications/coprs.yml
+
 # Install Workstation Specific Applications
 - import_tasks: applications/packages.yml
 
