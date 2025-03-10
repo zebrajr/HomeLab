@@ -11,6 +11,13 @@ software_packages_workstation_present:
   - nodejs
   - qemu-kvm
   - virt-manager
+  # hyprland stuff
+  - hyprland
+  - hyprlock
+  - hyprpaper
+  - hyprpolkitagent
+  - dunst
+  - waybar
 
 flatpaks_workstation_present:
   - com.vscodium.codium
