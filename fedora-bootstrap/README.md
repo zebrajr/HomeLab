@@ -15,3 +15,7 @@ The `Win Goal` is to be the same - or better - then installing Fedora KDE Plasma
 - Configure `settings.json`
 
 - Run `sudo ./bootstrap.sh`
+
+## ToDo
+- [ ] Add "LACT" (Linux GPU Configuration and Monitoring Tool) to Battlestation
+- [ ] Move everything to dedicate scripts
