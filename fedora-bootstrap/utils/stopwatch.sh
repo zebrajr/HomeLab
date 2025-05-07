@@ -1,40 +1,16 @@
 #!/bin/bash
 
-function stopwatch_start {
-    echo ""
-    echo "---------------------------"
-    echo "[.] Stopwatch started"
-    echo "---------------------------"
-    echo ""
-    start_time=$(date +%s)
+start_stopwatch() {
+    local start_time=$SECONDS
+    export SCRIPT_START_TIME=$start_time
 }
 
-
-# Function to display the elapsed time
-function stopwatch_elapsed {
-    local elapsed=$((end_time - start_time))
-    local days=$((elapsed/60/60/24))
-    local hours=$((elapsed/60/60%24))
-    local minutes=$((elapsed/60%60))
-    local seconds=$((elapsed%60))
-    echo ""
-    echo "---------------------------"
-    printf "Time Elapsed: %02d:%02d\n" $minutes $seconds
-    echo "---------------------------"
-    echo ""
+stop_stopwatch() {
+    local end_time=$SECONDS
+    local start_time=$SCRIPT_START_TIME
+    local duration=$((end_time - start_time))
+    local minutes=$((duration / 60))
+    local seconds=$((duration % 60))
+    local milliseconds=$((duration * 1000 % 1000))
+    echo "Script execution time: ${minutes} m : ${seconds} s : ${milliseconds} ms"
 }
-
-# Function to end the stopwatch
-function stopwatch_end {
-    end_time=$(date +%s)
-    echo ""
-    echo "---------------------------"
-    echo "[.] Stopwatch stopped"
-    echo "---------------------------"
-    echo ""
-    stopwatch_elapsed
-}
-
-# Prevent the script from executing when sourced
-return 0 2>/dev/null
-exit 0

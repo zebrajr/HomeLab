@@ -1,21 +1,43 @@
-# Bash System Bootstraper
+# FSSS (Fedora System Setup Scripts)
+Pronounced as "F-Triple-S"
 
-Bash based "ansible-look-a-like"
+## Overview
+This repository contains a collection of scripts to automate Fedora system setup and configuration.
 
-An attempt at bootstrapping a Linux System - initially just Fedora Minimal - to a Full Running OS with bash.
+## Usage Instructions
 
-The `Win Goal` is to be the same - or better - then installing Fedora KDE Plasma and then using the Ansible Playbook to get the host 99% ready to use.
+### Preparation
+1. Review and modify `settings.conf` to configure system-specific options
+2. Inspect the scripts to ensure they meet your specific requirements
+3. Run `setup_fedora.sh` to begin the deployment process
 
-## Before First Run
+## Directory Structure
 
-## Configuring and What's What
+### `cleanup/`
+Contains cleanup scripts that are executed at the end of the deployment process. These scripts handle final system configuration, removing temporary files, and performing last-minute system adjustments.
 
-## Running
+### `core/`
+Scripts in this directory define fundamental system parameters and core configuration values. These scripts set baseline system settings that are critical to the overall system setup.
 
-- Configure `settings.json`
+### `customs/`
+Contains specialized, system-dependent scripts that are **NOT** run by default. These scripts should be:
+- Carefully reviewed before execution
+- Considered as examples
+- Manually invoked only after thorough inspection
+- Understood to be highly specific to particular system configurations
 
-- Run `sudo ./bootstrap.sh`
+### `packages/`
+Scripts dedicated to installing and deploying specific software packages. Each script typically handles the installation, configuration, and initial setup of a particular application or software suite.
 
-## ToDo
-- [ ] Add "LACT" (Linux GPU Configuration and Monitoring Tool) to Battlestation
-- [ ] Move everything to dedicate scripts
+### `utils/`
+Utility scripts designed to:
+- Improve deployment process maintainability
+- Enhance script readability
+- Provide helper functions
+- Streamline configuration and setup tasks
+
+## Caution
+Always review scripts before execution and ensure they align with your system requirements and security policies.
+
+## License
+This project is licensed under the MIT License. See [MIT License](https://opensource.org/licenses/MIT) for details.
