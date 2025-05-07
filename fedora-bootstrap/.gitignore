@@ -1,0 +1,5 @@
+# ignore settings.config
+settings.conf
+
+# ignore all customs scripts
+customs/*.sh
