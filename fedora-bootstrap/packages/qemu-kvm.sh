@@ -6,3 +6,12 @@ fi
 
 echo "${INSTALLING_PRE_TEXT} qemu-kvm virt-manager bridge-utils libvirt"
 eval "sudo dnf install qemu-kvm virt-manager libvirt bridge-utils -y $OUTPUT_CONTROL"
+
+
+if [ -z "$MAIN_USER" ]; then
+    "MAIN_USER is not set. Skipping adding user to libvirt"
+else
+    echo "Adding ${MAIN_USER} to libvirt"
+    eval "sudo usermod -aG libvirt $MAIN_USER"
+fi
+
