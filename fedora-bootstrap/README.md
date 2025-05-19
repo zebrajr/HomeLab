@@ -7,7 +7,8 @@ This repository contains a collection of scripts to automate Fedora system setup
 ## Usage Instructions
 
 ### Preparation
-1. Review and modify `settings.conf` to configure system-specific options
+1. Generate your custom `settings.conf` by running `./generate_settings.sh`
+    - You can also make a copy of `settings.conf.sample` and edit it manually
 2. Inspect the scripts to ensure they meet your specific requirements
 3. Run `setup_fedora.sh` to begin the deployment process
 
