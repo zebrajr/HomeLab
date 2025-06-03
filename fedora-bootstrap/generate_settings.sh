@@ -140,7 +140,7 @@ SETUP_PERSONAL=$ANSWER_SETUP_PERSONAL
 SETUP_GAMING=$ANSWER_SETUP_GAMING
 
 ## Development - Do we develop on this machine?
-### golang, nodejs, zed
+### golang, nodejs, zed, dbeaver
 SETUP_DEVELOPMENT=$ANSWER_SETUP_DEVELOPMENT
 
 ## GameDev - Do we develop GAMES on this machine?

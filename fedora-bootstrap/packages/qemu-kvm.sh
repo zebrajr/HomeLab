@@ -4,8 +4,8 @@ if [ "$SETUP_WORKSTATION" != "true" ]; then
     return 0
 fi
 
-echo "${INSTALLING_PRE_TEXT} qemu-kvm virt-manager bridge-utils libvirt"
-eval "sudo dnf install qemu-kvm virt-manager libvirt bridge-utils -y $OUTPUT_CONTROL"
+echo "${INSTALLING_PRE_TEXT} qemu-kvm virt-manager bridge-utils libvirt virt-viewer"
+eval "sudo dnf install qemu-kvm virt-manager libvirt bridge-utils virt-viewer -y $OUTPUT_CONTROL"
 
 
 if [ -z "$MAIN_USER" ]; then
