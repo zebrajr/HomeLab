@@ -27,6 +27,9 @@ Contains specialized, system-dependent scripts that are **NOT** run by default. 
 - Manually invoked only after thorough inspection
 - Understood to be highly specific to particular system configurations
 
+### `manual/`
+Scripts to install software that are heavily depedendent on what you want / what you have. Eg.: Controlling AIO CPU Coolers
+
 ### `packages/`
 Scripts dedicated to installing and deploying specific software packages. Each script typically handles the installation, configuration, and initial setup of a particular application or software suite.
 
