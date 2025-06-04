@@ -128,7 +128,7 @@ SETUP_CORE_TTY=$ANSWER_SETUP_CORE_TTY
 SETUP_CORE_GUI=$ANSWER_SETUP_CORE_GUI
 
 ## Work Systems - Do we work on this device?
-### docker, docker-compose, LibreOffice, nmap, qemu-kvm, virt-manager, drawio
+### docker, docker-compose, LibreOffice, nmap, qemu-kvm, remmina, virt-manager, drawio
 SETUP_WORKSTATION=$ANSWER_SETUP_WORKSTATION
 
 ## Personal Use - Do we use this device for personal things?
@@ -140,7 +140,7 @@ SETUP_PERSONAL=$ANSWER_SETUP_PERSONAL
 SETUP_GAMING=$ANSWER_SETUP_GAMING
 
 ## Development - Do we develop on this machine?
-### golang, nodejs, zed, dbeaver
+### golang, nodejs, zed
 SETUP_DEVELOPMENT=$ANSWER_SETUP_DEVELOPMENT
 
 ## GameDev - Do we develop GAMES on this machine?
